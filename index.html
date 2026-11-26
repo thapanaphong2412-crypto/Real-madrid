@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid CF - Official Tribute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rm-white: #FFFFFF;
+            --rm-silver: #F4F4F4;
+            --rm-blue: #00529F;
+            --rm-gold: #FEBE10;
+            --rm-dark: #111111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--rm-silver);
+            color: var(--rm-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--rm-blue);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--rm-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--rm-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rm-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 82, 159, 0.8), rgba(17, 17, 17, 0.8)), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--rm-white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .btn {
+            background-color: var(--rm-gold);
+            color: var(--rm-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e5ab0d;
+            transform: translateY(-3px);
+        }
+
+        /* Content Sections */
+        section {
+            padding: 100px 50px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--rm-blue);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--rm-gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .card {
+            background: var(--rm-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--rm-blue);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--rm-blue);
+        }
+
+        /* About Section Background */
+        #about {
+            background-color: var(--rm-white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--rm-dark);
+            color: var(--rm-white);
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            nav ul {
+                display: none; /* สำหรับหน้าจอมือถือ สามารถเพิ่ม Hamburger Menu ต่อได้ */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            section {
+                padding: 80px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">REAL MADRID <span>CF</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">หน้าแรก</a></li>
+                <li><a href="#about">ประวัติสโมสร</a></li>
+                <li><a href="#squad">นักเตะและทีม</a></li>
+                <li><a href="#trophies">เกียรติประวัติ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Hala Madrid y nada más</h1>
+        <p>ยินดีต้อนรับสู่เว็บไซต์อย่างไม่เป็นทางการของสโมสรฟุตบอลที่ยิ่งใหญ่ที่สุดแห่งศตวรรษที่ 20 เจ้าของแชมป์ UEFA Champions League มากที่สุดในประวัติศาสตร์</p>
+        <a href="#about" class="btn">สำรวจข้อมูลสโมสร</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>ประวัติสโมสร</h2>
+            <p style="margin-top: 20px; color: #555;">สโมสรฟุตบอลเรอัลมาดริด (Real Madrid Club de Fútbol) ก่อตั้งขึ้นในปี ค.ศ. 1902 ตั้งอยู่ที่กรุงมาดริด ประเทศสเปน สโมสรลงเล่นในลาลิกา และได้รับการยกย่องว่าเป็นหนึ่งในสโมสรที่ประสบความสำเร็จและมีมูลค่าสูงที่สุดในโลกฟุตบอล</p>
+        </div>
+    </section>
+
+    <!-- Squad Section -->
+    <section id="squad" style="background-color: #fff;">
+        <div class="container">
+            <h2>ทีมผู้เล่นและสตาฟฟ์</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>ผู้จัดการทีม</h3>
+                    <p>นำทัพด้วยแท็กติกอันยอดเยี่ยมและความมุ่งมั่นในการพาโลסบลานโกสคว้าชัยชนะในทุกรายการแข่งขัน</p>
+                </div>
+                <div class="card">
+                    <h3>นักเตะระดับโลก</h3>
+                    <p>การผสมผสานระหว่างผู้เล่นมากประสบการณ์ระดับเวิลด์คลาสและดาวรุ่งพุ่งแรงที่พร้อมสร้างสรรค์เกมรุกอันเร้าใจ</p>
+                </div>
+                <div class="card">
+                    <h3>ตำนานสโมสร</h3>
+                    <p>สืบสานตำนานจากอดีตผู้เล่นผู้ยิ่งใหญ่ที่ฝากชื่อเสียงและเกียรติประวัติไว้บนผืนหญ้าซานติอาโก เบร์นาเบว</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophies Section -->
+    <section id="trophies">
+        <div class="container">
+            <h2>เกียรติประวัติสูงสุด</h2>
+            <div class="grid">
+                <div class="card" style="border-top-color: var(--rm-gold);">
+                    <h3>15x UEFA Champions League</h3>
+                    <p>เจ้าแห่งยุโรปผู้ครองถ้วยบิ๊กเอียร์มากที่สุดในประวัติศาสตร์ฟุตบอลยุโรป</p>
+                </div>
+                <div class="card" style="border-top-color: var(--rm-gold);">
+                    <h3>La Liga Champions</h3>
+                    <p>แชมป์ลีกสูงสุดของประเทศสเปนที่สะท้อนความสม่ำเสมอและความแข็งแกร่งในประเทศ</p>
+                </div>
+                <div class="card" style="border-top-color: var(--rm-gold);">
+                    <h3>Club World Cup</h3>
+                    <p>ความเป็นเจ้าลูกหนังระดับโลกที่ยืนยันความยิ่งใหญ่ในเวทีระดับสากล</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Real Madrid CF Tribute Page. Developed with HTML & CSS. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
